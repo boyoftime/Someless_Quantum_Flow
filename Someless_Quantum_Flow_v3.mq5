@@ -204,4 +204,5 @@ void CreateBranding()
       ObjectSetInteger(0, labelName, OBJPROP_HIDDEN, true);
       ChartRedraw(0);
    }
+
 }
