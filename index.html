@@ -8,8 +8,8 @@
     <style>
         /* --- CSS VARIABLES & THEMES --- */
         :root {
-            --primary: #00e676; /* Matrix Green */
-            --secondary: #ff3d00; /* Red */
+            --primary: #00e676;
+            --secondary: #ff3d00;
             --bg-body: #050505;
             --bg-card: #111111;
             --bg-card-hover: #1a1a1a;
@@ -20,7 +20,7 @@
         }
 
         [data-theme="light"] {
-            --primary: #008040; /* Darker Green for white bg */
+            --primary: #008040;
             --secondary: #d32f2f;
             --bg-body: #f4f6f8;
             --bg-card: #ffffff;
@@ -31,10 +31,9 @@
             --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
-        /* --- GLOBAL STYLES --- */
         * { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.3s, color 0.3s; }
         body { font-family: 'Inter', sans-serif; background: var(--bg-body); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
-        
+
         /* --- HEADER --- */
         header {
             padding: 15px 5%;
@@ -51,7 +50,6 @@
         }
         .logo { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.5px; }
         .logo span { color: var(--primary); }
-        
         .header-actions { display: flex; gap: 15px; align-items: center; }
         .theme-btn {
             background: transparent;
@@ -63,7 +61,7 @@
             font-size: 1rem;
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
             min-height: 90vh;
             display: flex;
@@ -74,19 +72,13 @@
             padding: 100px 20px 50px;
             background: radial-gradient(circle at top, rgba(0, 230, 118, 0.1) 0%, transparent 70%);
         }
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
         .highlight {
             background: -webkit-linear-gradient(45deg, var(--primary), #2196f3);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
-        
         .btn {
             display: inline-flex;
             align-items: center;
@@ -100,31 +92,17 @@
         .btn-primary { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); }
         .btn-primary:hover { transform: scale(1.05); }
 
-        /* --- WHAT IS IT SECTION --- */
+        /* --- INFO SECTION --- */
         .info-section { padding: 80px 10%; }
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-size: 2.5rem; margin-bottom: 10px; }
-        
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        .info-card {
-            background: var(--bg-card);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid var(--border);
-        }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .info-card { background: var(--bg-card); padding: 30px; border-radius: 15px; border: 1px solid var(--border); }
         .info-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; }
 
-        /* --- 10 STRATEGIES SECTION --- */
+        /* --- STRATEGIES --- */
         .strategies-section { padding: 80px 5%; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+        .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .strategy-card {
             background: var(--bg-body);
             border: 1px solid var(--border);
@@ -132,47 +110,169 @@
             padding: 20px;
             position: relative;
             overflow: hidden;
+            transition: border-color 0.3s, transform 0.3s;
         }
         .strategy-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .tag {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
+        .tag { font-size: 0.75rem; text-transform: uppercase; font-weight: bold; padding: 5px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
         .tag-safe { background: rgba(0, 230, 118, 0.2); color: var(--primary); }
         .tag-danger { background: rgba(255, 61, 0, 0.2); color: var(--secondary); }
         .tag-balanced { background: rgba(33, 150, 243, 0.2); color: #2196f3; }
-        
         .params { display: flex; gap: 15px; margin: 15px 0; font-family: monospace; font-size: 0.9rem; color: var(--text-muted); }
         .param-box span { display: block; font-weight: bold; color: var(--text-main); font-size: 1.1rem; }
 
         /* --- GALLERY --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 0 5%;
-        }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 0 5%; }
         .gallery-img {
             width: 100%;
             border-radius: 10px;
             border: 2px solid var(--border);
-            cursor: pointer;
-            transition: 0.3s;
+            cursor: zoom-in;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            display: block;
         }
-        .gallery-img:hover { border-color: var(--primary); opacity: 0.9; }
+        .gallery-img:hover {
+            border-color: var(--primary);
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(0, 230, 118, 0.2);
+        }
+
+        /* =============================================
+           LIGHTBOX / ZOOM OVERLAY
+        ============================================= */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(6px);
+            cursor: zoom-out;
+            /* Fade-in animation */
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        #lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox.visible { opacity: 1; }
+
+        /* Inner container — handles pan by transform translate */
+        #lb-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #lb-img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 10px;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 60px rgba(0, 230, 118, 0.3);
+            transform-origin: center center;
+            /* Scale + translate applied via JS */
+            transform: scale(1) translate(0px, 0px);
+            transition: transform 0.15s ease;
+            cursor: grab;
+            user-select: none;
+            pointer-events: all;
+        }
+        #lb-img.dragging { cursor: grabbing; transition: none; }
+
+        /* Toolbar */
+        #lb-toolbar {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            background: rgba(0,0,0,0.7);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 10px 20px;
+            z-index: 10000;
+            backdrop-filter: blur(10px);
+        }
+        .lb-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .lb-btn:hover { background: var(--primary); color: #000; border-color: var(--primary); }
+
+        #lb-zoom-label {
+            display: flex;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            min-width: 48px;
+            justify-content: center;
+            font-family: monospace;
+        }
+
+        /* Close button top-right */
+        #lb-close {
+            position: fixed;
+            top: 20px;
+            right: 25px;
+            background: rgba(0,0,0,0.6);
+            border: 1px solid var(--border);
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        #lb-close:hover { background: var(--secondary); border-color: var(--secondary); }
+
+        /* Zoom hint badge */
+        #lb-hint {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.6);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            padding: 6px 16px;
+            border-radius: 50px;
+            z-index: 10001;
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        #lb-hint.hidden { opacity: 0; }
 
         /* --- FOOTER --- */
         footer { padding: 50px 20px; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
-        
-        /* Mobile Tweaks */
+
         @media(max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .params { flex-wrap: wrap; }
+            #lb-toolbar { bottom: 15px; padding: 8px 14px; gap: 6px; }
         }
     </style>
 </head>
@@ -208,7 +308,7 @@
         <div class="info-grid">
             <div class="info-card">
                 <h3>🧠 The Logic</h3>
-                <p>The indicator analyzes momentum using advanced RSI calculations. It doesn't just look for highs and lows; it waits for **confirmation**. It detects when price has exhausted itself and is mathematically forced to reverse.</p>
+                <p>The indicator analyzes momentum using advanced RSI calculations. It doesn't just look for highs and lows; it waits for confirmation. It detects when price has exhausted itself and is mathematically forced to reverse.</p>
             </div>
             <div class="info-card">
                 <h3>🚫 Non-Repainting</h3>
@@ -227,10 +327,7 @@
             <h2>🔧 10 Powerful Strategies</h2>
             <p style="color: var(--text-muted);">Customize the "Inputs" tab to fit your trading personality.</p>
         </div>
-        
         <div class="strategy-grid">
-            
-            <!-- Strategy 1 -->
             <div class="strategy-card">
                 <span class="tag tag-balanced">1. The Standard (Default)</span>
                 <p>The perfectly balanced setting for V250(1s).</p>
@@ -241,8 +338,6 @@
                 </div>
                 <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Expect:</strong> Reliable signals with moderate frequency. Good for M1/M5.</p>
             </div>
-
-            <!-- Strategy 2 -->
             <div class="strategy-card">
                 <span class="tag tag-danger">2. The Scalper</span>
                 <p>Fast signals for quick 2-3 candle profits.</p>
@@ -253,8 +348,6 @@
                 </div>
                 <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Expect:</strong> Many signals per hour. Requires quick exits.</p>
             </div>
-
-            <!-- Strategy 3 -->
             <div class="strategy-card">
                 <span class="tag tag-safe">3. The Sniper</span>
                 <p>Filters out noise. Only takes extreme reversals.</p>
@@ -265,8 +358,6 @@
                 </div>
                 <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Expect:</strong> Few signals (maybe 5 per day), but very high accuracy.</p>
             </div>
-
-            <!-- Strategy 4 -->
             <div class="strategy-card">
                 <span class="tag tag-safe">4. Trend Follower</span>
                 <p>Smoother entries on trending markets.</p>
@@ -277,8 +368,6 @@
                 </div>
                 <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Expect:</strong> Slower reactions, avoids getting faked out by small spikes.</p>
             </div>
-
-            <!-- Strategy 5 -->
             <div class="strategy-card">
                 <span class="tag tag-danger">5. Hyper-Aggressive</span>
                 <p>For high-volatility action lovers.</p>
@@ -289,8 +378,6 @@
                 </div>
                 <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Expect:</strong> Constant arrows. Only use if you know price action well.</p>
             </div>
-
-            <!-- Strategy 6 -->
             <div class="strategy-card">
                 <span class="tag tag-safe">6. The Swing King</span>
                 <p>Captures the big daily moves.</p>
@@ -301,8 +388,6 @@
                 </div>
                 <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Expect:</strong> Best used on M15 or H1 timeframes.</p>
             </div>
-
-            <!-- Strategy 7 -->
             <div class="strategy-card">
                 <span class="tag tag-balanced">7. Early Bird</span>
                 <p>Catches the reversal before the crowd.</p>
@@ -313,8 +398,6 @@
                 </div>
                 <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Expect:</strong> Enters trades early. Use Stop Loss tightly.</p>
             </div>
-
-            <!-- Strategy 8 -->
             <div class="strategy-card">
                 <span class="tag tag-safe">8. The Conservative</span>
                 <p>Super safe mode.</p>
@@ -325,8 +408,6 @@
                 </div>
                 <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Expect:</strong> Arrows only appear during massive market crashes/pumps.</p>
             </div>
-
-            <!-- Strategy 9 -->
             <div class="strategy-card">
                 <span class="tag tag-balanced">9. Mid-Range Filter</span>
                 <p>Trading the internal noise.</p>
@@ -337,8 +418,6 @@
                 </div>
                 <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Expect:</strong> Trades small pullbacks within a trend.</p>
             </div>
-
-            <!-- Strategy 10 -->
             <div class="strategy-card">
                 <span class="tag tag-safe">10. Noise Reducer</span>
                 <p>Great for choppy markets.</p>
@@ -349,7 +428,6 @@
                 </div>
                 <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Expect:</strong> Ignores small spikes, focuses on solid turns.</p>
             </div>
-
         </div>
     </section>
 
@@ -357,16 +435,16 @@
     <section class="info-section">
         <div class="section-title">
             <h2>See it in Action</h2>
-            <p style="color: var(--text-muted);">Green = Money In. Red = Money Out.</p>
+            <p style="color: var(--text-muted);">Green = Money In. Red = Money Out. <strong style="color: var(--primary);">Click any image to zoom.</strong></p>
         </div>
 
-        <h3 style="margin-left: 5%; color: var(--primary);">🟢 Buy & Sell Signals</h3>
+        <h3 style="margin-left: 5%; color: var(--primary);">🟢 Buy &amp; Sell Signals</h3>
         <div class="gallery-grid" style="margin-bottom: 40px;">
-            <img src="buy1.jpg" class="gallery-img" alt="Buy 1" onerror="this.src='https://via.placeholder.com/300x200?text=Buy+1'">
-            <img src="buy2.jpg" class="gallery-img" alt="Buy 2" onerror="this.src='https://via.placeholder.com/300x200?text=Buy+2'">
-            <img src="buy3.jpg" class="gallery-img" alt="Buy 3" onerror="this.src='https://via.placeholder.com/300x200?text=Buy+3'">
-            <img src="buy4.jpg" class="gallery-img" alt="Buy 4" onerror="this.src='https://via.placeholder.com/300x200?text=Buy+4'">
-            <img src="buy5.jpg" class="gallery-img" alt="Buy 5" onerror="this.src='https://via.placeholder.com/300x200?text=Buy+5'">
+            <img src="buy1.jpg" class="gallery-img" alt="Buy 1" onerror="this.src='https://via.placeholder.com/300x200?text=Buy+1'" onclick="openLightbox(this)">
+            <img src="buy2.jpg" class="gallery-img" alt="Buy 2" onerror="this.src='https://via.placeholder.com/300x200?text=Buy+2'" onclick="openLightbox(this)">
+            <img src="buy3.jpg" class="gallery-img" alt="Buy 3" onerror="this.src='https://via.placeholder.com/300x200?text=Buy+3'" onclick="openLightbox(this)">
+            <img src="buy4.jpg" class="gallery-img" alt="Buy 4" onerror="this.src='https://via.placeholder.com/300x200?text=Buy+4'" onclick="openLightbox(this)">
+            <img src="buy5.jpg" class="gallery-img" alt="Buy 5" onerror="this.src='https://via.placeholder.com/300x200?text=Buy+5'" onclick="openLightbox(this)">
         </div>
     </section>
 
@@ -383,8 +461,25 @@
         <p>&copy; 2026 Someless Development | Tanzania</p>
     </footer>
 
-    <!-- JAVASCRIPT FOR THEME TOGGLE -->
+    <!-- =============================================
+         LIGHTBOX HTML
+    ============================================= -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <div id="lb-container">
+            <img id="lb-img" src="" alt="Zoomed image" draggable="false">
+        </div>
+        <button id="lb-close" onclick="closeLightbox()" title="Close (Esc)">✕</button>
+        <div id="lb-hint">🖱 Scroll to zoom &nbsp;|&nbsp; Drag to pan &nbsp;|&nbsp; Esc to close</div>
+        <div id="lb-toolbar">
+            <button class="lb-btn" onclick="adjustZoom(-0.25)" title="Zoom Out">−</button>
+            <span id="lb-zoom-label">100%</span>
+            <button class="lb-btn" onclick="adjustZoom(0.25)" title="Zoom In">+</button>
+            <button class="lb-btn" onclick="resetZoom()" title="Reset zoom">⟳</button>
+        </div>
+    </div>
+
     <script>
+        /* ---- THEME TOGGLE ---- */
         function toggleTheme() {
             const html = document.documentElement;
             const btn = document.getElementById('themeBtn');
@@ -396,6 +491,203 @@
                 btn.innerHTML = '☀';
             }
         }
+
+        /* ========================================================
+           LIGHTBOX ENGINE
+        ======================================================== */
+        const lightbox   = document.getElementById('lightbox');
+        const lbImg      = document.getElementById('lb-img');
+        const lbHint     = document.getElementById('lb-hint');
+        const lbZoomLbl  = document.getElementById('lb-zoom-label');
+
+        let scale     = 1;
+        let minScale  = 1;
+        const maxScale = 5;
+        const scaleStep = 0.25;
+
+        // Pan state
+        let translateX = 0, translateY = 0;
+        let isDragging = false;
+        let dragStartX = 0, dragStartY = 0;
+        let dragOriginX = 0, dragOriginY = 0;
+
+        // Hint auto-hide timer
+        let hintTimer = null;
+
+        function openLightbox(imgEl) {
+            lbImg.src = imgEl.src;
+            lbImg.alt = imgEl.alt;
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            applyTransform(false);
+
+            lightbox.style.display = 'flex';
+            // Trigger fade-in next frame
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => lightbox.classList.add('visible'));
+            });
+
+            document.body.style.overflow = 'hidden';
+            showHint();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('visible');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+                lbImg.src = '';
+            }, 250);
+            document.body.style.overflow = '';
+            clearTimeout(hintTimer);
+        }
+
+        function applyTransform(animate = true) {
+            if (animate) {
+                lbImg.style.transition = 'transform 0.15s ease';
+            } else {
+                lbImg.style.transition = 'none';
+            }
+            lbImg.style.transform = `scale(${scale}) translate(${translateX / scale}px, ${translateY / scale}px)`;
+            lbZoomLbl.textContent = Math.round(scale * 100) + '%';
+
+            // Show/hide panning cursor cue
+            lbImg.style.cursor = scale > 1 ? 'grab' : 'zoom-out';
+        }
+
+        function clampTranslation() {
+            if (scale <= 1) { translateX = 0; translateY = 0; return; }
+            const rect = lbImg.getBoundingClientRect();
+            const maxX = (rect.width  * (scale - 1)) / 2;
+            const maxY = (rect.height * (scale - 1)) / 2;
+            translateX = Math.max(-maxX, Math.min(maxX, translateX));
+            translateY = Math.max(-maxY, Math.min(maxY, translateY));
+        }
+
+        function adjustZoom(delta) {
+            scale = Math.min(maxScale, Math.max(minScale, scale + delta));
+            if (scale <= 1) { translateX = 0; translateY = 0; }
+            clampTranslation();
+            applyTransform(true);
+        }
+
+        function resetZoom() {
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            applyTransform(true);
+        }
+
+        function showHint() {
+            lbHint.classList.remove('hidden');
+            clearTimeout(hintTimer);
+            hintTimer = setTimeout(() => lbHint.classList.add('hidden'), 3500);
+        }
+
+        /* --- Mouse Wheel Zoom --- */
+        lightbox.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const delta = e.deltaY < 0 ? scaleStep : -scaleStep;
+            adjustZoom(delta);
+        }, { passive: false });
+
+        /* --- Click overlay to close (not toolbar / image when dragging) --- */
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === document.getElementById('lb-container')) {
+                closeLightbox();
+            }
+        });
+
+        /* --- Drag to Pan --- */
+        lbImg.addEventListener('mousedown', (e) => {
+            if (scale <= 1) return;
+            e.preventDefault();
+            isDragging = true;
+            dragStartX = e.clientX;
+            dragStartY = e.clientY;
+            dragOriginX = translateX;
+            dragOriginY = translateY;
+            lbImg.classList.add('dragging');
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            translateX = dragOriginX + (e.clientX - dragStartX);
+            translateY = dragOriginY + (e.clientY - dragStartY);
+            clampTranslation();
+            lbImg.style.transition = 'none';
+            lbImg.style.transform = `scale(${scale}) translate(${translateX / scale}px, ${translateY / scale}px)`;
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            lbImg.classList.remove('dragging');
+            applyTransform(false);
+        });
+
+        /* --- Touch support for mobile --- */
+        let lastTouchDist = null;
+        let touchStartScale = 1;
+
+        lbImg.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 2) {
+                lastTouchDist = getTouchDist(e.touches);
+                touchStartScale = scale;
+            } else if (e.touches.length === 1 && scale > 1) {
+                isDragging = true;
+                dragStartX = e.touches[0].clientX;
+                dragStartY = e.touches[0].clientY;
+                dragOriginX = translateX;
+                dragOriginY = translateY;
+            }
+        }, { passive: true });
+
+        lbImg.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 2) {
+                e.preventDefault();
+                const dist = getTouchDist(e.touches);
+                scale = Math.min(maxScale, Math.max(minScale, touchStartScale * (dist / lastTouchDist)));
+                if (scale <= 1) { translateX = 0; translateY = 0; }
+                clampTranslation();
+                lbImg.style.transition = 'none';
+                lbImg.style.transform = `scale(${scale}) translate(${translateX / scale}px, ${translateY / scale}px)`;
+                lbZoomLbl.textContent = Math.round(scale * 100) + '%';
+            } else if (e.touches.length === 1 && isDragging) {
+                e.preventDefault();
+                translateX = dragOriginX + (e.touches[0].clientX - dragStartX);
+                translateY = dragOriginY + (e.touches[0].clientY - dragStartY);
+                clampTranslation();
+                lbImg.style.transition = 'none';
+                lbImg.style.transform = `scale(${scale}) translate(${translateX / scale}px, ${translateY / scale}px)`;
+            }
+        }, { passive: false });
+
+        lbImg.addEventListener('touchend', (e) => {
+            if (e.touches.length < 2) lastTouchDist = null;
+            if (e.touches.length === 0) isDragging = false;
+            applyTransform(false);
+        });
+
+        function getTouchDist(touches) {
+            const dx = touches[0].clientX - touches[1].clientX;
+            const dy = touches[0].clientY - touches[1].clientY;
+            return Math.sqrt(dx * dx + dy * dy);
+        }
+
+        /* --- Keyboard --- */
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === 'none') return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === '+' || e.key === '=') adjustZoom(scaleStep);
+            if (e.key === '-') adjustZoom(-scaleStep);
+            if (e.key === '0') resetZoom();
+        });
+
+        /* --- Double-click to toggle zoom --- */
+        lbImg.addEventListener('dblclick', () => {
+            if (scale > 1) { resetZoom(); } else { adjustZoom(1); }
+        });
     </script>
 </body>
 </html>
